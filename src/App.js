@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import './App.css';
 import Form from './components/Form.js'
-import Categories from './components/Categories';
 import Task from './components/Task';
 import TaskList from './components/TaskList';
 
@@ -25,10 +24,24 @@ const addTask = (input) => {
   setToDo(toDo.filter((task) => task.id !== id));
  }
 
- const editTask = (id) => {
-  const editedTask = toDo.filter((task) => task.id === id)
-  setToDo(editedTask.id, editedTask.text, editedTask.completed)
+ const editTask = (id, edit) => {
+  const editedTask = toDo.find((task) => task.id === id)
+  const newEdit = toDo.map(task =>
+    task.id === editedTask.id ? {...task,
+      text: edit
+    }: task)
+    return setToDo(newEdit)
  }
+
+ const completedTask = (id, completed) => {
+  const findTask = toDo.find((task) => task.id === id)
+  // if (findTask) {
+  const newComplete = toDo.map(task =>
+    task.id === findTask.id ? {...task,
+    completed: !completed} : task)
+  return setToDo(newComplete)
+ }
+
 
   return (
     <div className="App">
@@ -36,8 +49,7 @@ const addTask = (input) => {
         <h1> To Do List </h1>
       </header>
       <Form addTask={addTask}/>
-      <Categories putCat ={toDo} />
-      <Task putTask={toDo} deleteTask = {deleteTask}/>
+      <Task putTask={toDo} deleteTask = {deleteTask} editTask ={editTask} completedTask = {completedTask}/>
     </div>
   );
 }
