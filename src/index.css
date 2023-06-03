@@ -16,3 +16,16 @@ code {
     width: 60%;
     height: 26px;
 }
+
+.submit-button {
+font-size: 22px;
+}
+
+.invisible-button {
+  background: transparent;
+  border: none !important;
+}
+
+#plus-form {
+  font-size: 22px;
+}

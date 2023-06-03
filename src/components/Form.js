@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 
+import {BsPlusCircleFill} from "react-icons/bs";
+
 export default function Form (props){
   const [input, setInput] = useState("")
 
@@ -26,7 +28,7 @@ export default function Form (props){
       value= {input}
       onChange= {handleChange}
       />
-      <button type="submit">Add task!</button>
+      <button type="submit" className="invisible-button" id="plus-form"><BsPlusCircleFill></BsPlusCircleFill></button>
     </form>
   </div>)
 }

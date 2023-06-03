@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 
-export default function TaskList({id, text, completed, deleteTask, editTask, completedTask, showTask}){
+import {BsFillTrash3Fill, BsFillPencilFill, BsCheckCircleFill, BsXCircleFill} from 'react-icons/bs';
+
+export default function TaskList({id, text, completed, deleteTask, editTask, completedTask, showTask, putTask}){
 
 const [isEditing, setIsEditing] = useState(false);
 const [edit, setEdit] = useState(text)
@@ -39,14 +41,13 @@ return(
     value="check"
     onChange= {toggleComplete}
     />
-    <button
+    <BsFillTrash3Fill
     type="button"
     onClick = {() => deleteTask(id)}
-    >x</button>
-    <button
+    />
+    <BsFillPencilFill
     onClick = {handleEditClick}
-    >
-    </button>
+    />
     {isEditing === true ?
     <form className="edit-form" action="/" method ="get" onSubmit= {handleSubmit}>
       <input
@@ -57,8 +58,8 @@ return(
         onChange = {handleEditing}
         onClick = {()=> editTask(id)}
        />
-       <button type="submit">Edit</button>
-       <button onClick={falseEdit}> x</button>
+       <button type="submit" className="invisible-button"> <BsCheckCircleFill /> </button>
+       <BsXCircleFill onClick={falseEdit} />
     </form> : null}
   </div>
 </div>

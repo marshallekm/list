@@ -1,9 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './App.css';
 import Form from './components/Form.js'
 import Task from './components/Task';
-import TaskList from './components/TaskList';
-
+import TitleEdit from './components/TitleEdit'
 
 function App() {
 
@@ -39,14 +38,18 @@ const addTask = (input) => {
   const newComplete = toDo.map(task =>
     task.id === findTask.id ? {...task,
     completed: !completed} : task)
+      console.log(newComplete)
   return setToDo(newComplete)
  }
+
+ useEffect(()=> {
+ }, [toDo])
 
 
   return (
     <div className="App">
       <header>
-        <h1> To Do List </h1>
+        <TitleEdit />
       </header>
       <Form addTask={addTask}/>
       <Task putTask={toDo} deleteTask = {deleteTask} editTask ={editTask} completedTask = {completedTask}/>
