@@ -59,7 +59,7 @@ return(
         onClick = {()=> editTask(id)}
        />
        <button type="submit" className="invisible-button"> <BsCheckCircleFill /> </button>
-       <BsXCircleFill onClick={falseEdit} />
+       <button className="invisible-button"><BsXCircleFill onClick={falseEdit} /></button>
     </form> : null}
   </div>
 </div>

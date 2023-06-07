@@ -24,8 +24,13 @@ font-size: 22px;
 .invisible-button {
   background: transparent;
   border: none !important;
+  font-size: 18px;
 }
 
 #plus-form {
   font-size: 22px;
+}
+
+.title-icon{
+  font-size: 18px;
 }

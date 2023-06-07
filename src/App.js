@@ -4,9 +4,16 @@ import Form from './components/Form.js'
 import Task from './components/Task';
 import TitleEdit from './components/TitleEdit'
 
+
 function App() {
 
 const [toDo, setToDo] = useState([])
+const [title, setTitle] = useState(localStorage.getItem('title') || 'My list');
+
+useEffect(() => {
+localStorage.setItem('title', title);
+}, [title]);
+
 
 const addTask = (input) => {
   setToDo([...toDo,
@@ -14,6 +21,7 @@ const addTask = (input) => {
   text: input,
   completed: false}])
  }
+
 
  const recieveData = (data) => {
   setToDo(data)
@@ -43,13 +51,13 @@ const addTask = (input) => {
  }
 
  useEffect(()=> {
- }, [toDo])
+ }, [toDo, title])
 
 
   return (
     <div className="App">
       <header>
-        <TitleEdit />
+        <TitleEdit title={title} setTitle={setTitle} />
       </header>
       <Form addTask={addTask}/>
       <Task putTask={toDo} deleteTask = {deleteTask} editTask ={editTask} completedTask = {completedTask}/>

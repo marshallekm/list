@@ -2,8 +2,6 @@ import React, {useState, useEffect} from 'react'
 import TaskList from './TaskList.js';
 
 export default function Task({putTask, deleteTask, editTask, completedTask}){
-
-
 const [showTasks, setShowTasks] = useState([])
 
 const findActive = () => {
