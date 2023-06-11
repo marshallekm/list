@@ -36,11 +36,13 @@ return(
 <div>
   <div key={id} className="listItem">
     {isEditing === false ? text : edit}
+    {completed === false ?
     <input
     type="checkbox"
     value="check"
     onChange= {toggleComplete}
-    />
+    /> : <BsCheckCircleFill></BsCheckCircleFill>}
+
     <BsFillTrash3Fill
     type="button"
     onClick = {() => deleteTask(id)}

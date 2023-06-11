@@ -25,28 +25,10 @@ setShowTasks(putTask)
   return(
     <div>
     <button className="active-button" onClick={() => findActive(putTask)}>Active</button>
-    {/* {activeTasks.map(({id, text, completed}) =>
-    <TaskList
-    id ={id}
-    text={text}
-    completed ={completed}
-    deleteTask={deleteTask}
-    editTask={editTask}
-    compeltedTask={completedTask}
-    putTask={putTask}
-    />)} */}
+
 
     <button className="completed-button" onClick={()=> findComplete(putTask)}> Completed </button>
-     {/* {completeTasks.map(({id, text, completed}) =>
-     <TaskList
-      id ={id}
-      text={text}
-      completed ={completed}
-      deleteTask={deleteTask}
-      editTask={editTask}
-      compeltedTask={completedTask}
-      putTask={putTask}
-     />)} */}
+
 
     <button className="all-button" onClick = {()=> findAll(putTask)}> All</button>
 

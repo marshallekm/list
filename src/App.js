@@ -7,13 +7,27 @@ import TitleEdit from './components/TitleEdit'
 
 function App() {
 
-const [toDo, setToDo] = useState([])
+const [toDo, setToDo] = useState(()=> {
+  const storedTodo = localStorage.getItem('todo');
+  return storedTodo ? JSON.parse(storedTodo): [];
+})
+
 const [title, setTitle] = useState(localStorage.getItem('title') || 'My list');
 
 useEffect(() => {
 localStorage.setItem('title', title);
 }, [title]);
 
+useEffect(() => {
+  localStorage.setItem('todo', JSON.stringify(toDo))
+}, [toDo]);
+
+useEffect(() => {
+const storedTodo = localStorage.getItem('todo')
+  if(storedTodo){
+    setToDo(JSON.parse([storedTodo]))
+  }
+}, [])
 
 const addTask = (input) => {
   setToDo([...toDo,
