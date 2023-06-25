@@ -23,7 +23,7 @@ setShowTasks(putTask)
 }, [putTask])
 
   return(
-    <div>
+    <div className='buttons'>
     <button className="active-button" onClick={() => findActive(putTask)}>Active</button>
 
 

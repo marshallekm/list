@@ -25,7 +25,8 @@ export default function TitleEdit({title, setTitle}){
 
   return (
     <div>
-     <h1 onClick={editTitle}>{title} <BsFillPencilFill className="title-icon" onClick={editTitle}/></h1>
+     <h1 className="title" onClick={editTitle}>{title} <BsFillPencilFill className="title-icon" onClick={editTitle}/></h1>
+    <div className="invisible-form">
      {editableForm ?
     <form action="/" method="get" onSubmit={handleSubmit}>
       <input
@@ -38,6 +39,7 @@ export default function TitleEdit({title, setTitle}){
        <button className="invisible-button"><BsXCircleFill onClick={falseEdit} /></button>
     </form>
     : void(0)}
+    </div>
     </div>
   )
 }

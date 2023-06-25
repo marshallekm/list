@@ -16,7 +16,7 @@ export default function Form (props){
   }
 
   return (
-  <div>
+  <div className="form-all">
     <form action="/" method="get" onSubmit={handleSubmit}>
       <input
       type="text"
@@ -28,7 +28,7 @@ export default function Form (props){
       value= {input}
       onChange= {handleChange}
       />
-      <button type="submit" className="invisible-button" id="plus-form"><BsPlusCircleFill></BsPlusCircleFill></button>
+      <button type="submit" className="invisible-button" id="plus-form"><BsPlusCircleFill className="invisible-plus"></BsPlusCircleFill></button>
     </form>
   </div>)
 }

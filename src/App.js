@@ -72,6 +72,7 @@ const addTask = (input) => {
     <div className="App">
       <header>
         <TitleEdit title={title} setTitle={setTitle} />
+
       </header>
       <Form addTask={addTask}/>
       <Task putTask={toDo} deleteTask = {deleteTask} editTask ={editTask} completedTask = {completedTask}/>

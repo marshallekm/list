@@ -5,8 +5,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
+*{
+    font-family: 'Cabin', sans-serif;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -14,7 +18,8 @@ code {
 
 .form-input {
     width: 60%;
-    height: 26px;
+    height: 36px;
+    font-size: 22px;
 }
 
 .submit-button {
@@ -25,12 +30,66 @@ font-size: 22px;
   background: transparent;
   border: none !important;
   font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  vertical-align: middle;
 }
 
 #plus-form {
-  font-size: 22px;
+  font-size: 32px;
+  vertical-align: middle;
 }
 
 .title-icon{
   font-size: 18px;
+}
+
+
+.list-text {
+  font-size: 20px;
+  margin: 28px;
+}
+
+.check-list{
+margin-left:8px;
+margin-right:8px;
+text-align: center;
+}
+
+
+
+
+input{
+  height: 26px;
+}
+
+
+
+.active-button, .completed-button, .all-button{
+  margin:50px;
+  margin-top:40px;
+  border: 1px black solid;
+  background-color: white;
+  padding: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.title{
+  font-size: 60px;
+}
+
+.listItem{
+/* border: 1px black solid; */
+width:60%;
+word-wrap: break-word;
+text-align: center;
+padding-top: 13px;
+padding-left:8px;
+padding-right:8px;
+}
+
+.list-text{
+  display: flex;
+  justify-content: center;
 }

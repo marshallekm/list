@@ -31,23 +31,29 @@ const toggleComplete = () => {
   completedTask(id, completed)
 }
 
+const unDoEdit = () => {
+toggleComplete()
+}
 
 return(
-<div>
+<div className="list-text">
   <div key={id} className="listItem">
     {isEditing === false ? text : edit}
     {completed === false ?
     <input
+    className='check-list'
     type="checkbox"
     value="check"
     onChange= {toggleComplete}
-    /> : <BsCheckCircleFill></BsCheckCircleFill>}
+    /> : <BsCheckCircleFill className= "check-list" onClick= {unDoEdit}></BsCheckCircleFill>}
 
     <BsFillTrash3Fill
+    className='check-list'
     type="button"
     onClick = {() => deleteTask(id)}
     />
     <BsFillPencilFill
+    className='check-list'
     onClick = {handleEditClick}
     />
     {isEditing === true ?
