@@ -37,9 +37,9 @@ const addTask = (input) => {
  }
 
 
- const recieveData = (data) => {
-  setToDo(data)
- }
+//  const recieveData = (data) => {
+//   setToDo(data)
+//  }
 
  const deleteTask = (id) => {
   setToDo(toDo.filter((task) => task.id !== id));
